@@ -7,16 +7,19 @@
         <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
         </li>
-        <?php if ($_SESSION['user_roel']) { ?>
-        <li class="nav-item">
-            <a class="nav-link" href="admin/index.php">Dashboard</a>
-        </li>
-        <?php }?>
+
+
+
     <?php  if($session->signed_in === false){ ?>
         <li class="nav-item">
             <a class="nav-link" href="login.php">login</a>
         </li>
         <?php }else{?>
+            <?php if ($_SESSION['user_role'] == 'admin'){ ?>
+        <li class="nav-item">
+            <a class="nav-link" href="admin/index.php">Dashboard</a>
+        </li>
+                <?php } ?>
         <li class="nav-item">
             <a class="nav-link" href="logout.php">logout</a>
         </li>
